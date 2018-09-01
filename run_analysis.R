@@ -42,3 +42,4 @@ library(data.table)
 dt <- data.table(dataselected)
 colstoavg <- names(dt)[1:79]
 dt.mean <- dt[,lapply(.SD,mean,na.rm=TRUE),by=key,.SDcols=colstoavg]
+write.table(dt.mean,"result.txt",sep=";",row.names=FALSE)
